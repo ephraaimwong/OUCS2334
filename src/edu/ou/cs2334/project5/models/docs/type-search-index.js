@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"edu.ou.cs2334.project5.models","l":"NonogramMakerModel"}];updateSearchResults();
