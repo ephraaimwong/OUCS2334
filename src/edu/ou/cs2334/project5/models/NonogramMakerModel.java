@@ -67,7 +67,7 @@ public class NonogramMakerModel {
 				}
 			}
 			read.close();
-			}
+		}
 	}
 	/**
 	 * reads file, calls NonogramMakerModel(File file) constructor
@@ -180,7 +180,7 @@ public class NonogramMakerModel {
 			tempCol[i] = grid[i * numCols + c];
 		}
 		return project(tempCol);
-		
+
 	}
 	/**
 	 * save file
@@ -188,14 +188,11 @@ public class NonogramMakerModel {
 	 * @throws IOException invalid filepath
 	 */
 	public void saveToFile(String filename) throws IOException {
-//		File file = new File(filename);
-//		file.getParentFile().mkdirs();
 		try(BufferedWriter write = new BufferedWriter(new FileWriter(filename))){
-			
-			write.write(this.toString());
+			write.write(toString());
 
 		}
-		}
+	}
 	/**
 	 * returns String representation of dimensions, projected rows, projected columns, and the puzzle grid
 	 * i.e. 
@@ -215,7 +212,7 @@ public class NonogramMakerModel {
 		List<String> lines = new ArrayList<>();
 		//dimensions of puzzle
 		lines.add(numRows + " " + numCols);
-		
+
 		//project rows
 		for(int i=0;i<numRows;i++) {
 			List<Integer> rowPP = projectRow(i);
@@ -242,7 +239,7 @@ public class NonogramMakerModel {
 			lines.add(row.toString());
 		}
 		String result = String.join(System.lineSeparator(), lines);
-		
+
 		return result;
 	}
 
