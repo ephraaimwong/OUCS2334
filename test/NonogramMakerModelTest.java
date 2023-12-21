@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import edu.ou.cs2334.project4.models.NonogramMakerModel;
+import edu.ou.cs2334.project5.models.NonogramMakerModel;
 
 class NonogramMakerModelTest {
 
@@ -128,5 +128,36 @@ class NonogramMakerModelTest {
 				"011"+ System.lineSeparator() +
 				"101";
 		assertEquals(expected, model.toString());
+		//custom test case testcustom1.txt
+		NonogramMakerModel m2 = new NonogramMakerModel(5,5);
+		m2.setCell(0, 0, true);
+		m2.setCell(0, 4, true);
+		m2.setCell(1, 0, true);
+		m2.setCell(1, 4, true);
+		m2.setCell(2, 0, true);
+		m2.setCell(2, 2, true);
+		m2.setCell(2, 4, true);
+		m2.setCell(3, 0, true);
+		m2.setCell(3, 2, true);
+		m2.setCell(3, 4, true);
+		m2.setCell(4, 1, true);
+		m2.setCell(4, 3, true);
+		expected = "5 5" + System.lineSeparator() + 
+				"1 1" + System.lineSeparator() + 
+				"1 1" + System.lineSeparator() + 
+				"1 1 1" + System.lineSeparator() + 
+				"1 1 1" + System.lineSeparator() + 
+				"1 1" + System.lineSeparator() + 
+				"4"  + System.lineSeparator() + 
+				"1" + System.lineSeparator() + 
+				"2"  + System.lineSeparator() + 
+				"1" + System.lineSeparator() + 
+				"4" + System.lineSeparator() + 
+				"10001" + System.lineSeparator() + 
+				"10001" + System.lineSeparator() + 
+				"10101" + System.lineSeparator() + 
+				"10101" + System.lineSeparator() + 
+				"01010";
+		assertEquals(expected, m2.toString());
 	}
 }
